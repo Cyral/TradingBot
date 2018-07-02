@@ -50,7 +50,7 @@ This strategy uses two exponential moving averages to determine when the price s
 and while this method works great when backtesting without a delay, it will usually lose money with live trading. This is
 why this bot supports backtesting with execution delays, as order execution timing is critical to accurate testing because in the real world orders may take a while to be matched.
 
-```
+```typescript
 export class EMAStrategy extends Strategy {
   private fast: EMAIndicator;
   private slow: EMAIndicator;
