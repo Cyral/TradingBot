@@ -1,0 +1,16 @@
+{
+  "name": "@genesis-trader/downloader",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon"
+  },
+  "dependencies": {
+    "@types/node": "^8.0.33",
+    "chalk": "^2.1.0",
+    "gdax": "github:coinbase/gdax-node",
+    "nodemon": "^1.12.1",
+    "ts-node": "^3.3.0",
+    "typescript": "^2.5.3"
+  }
+}

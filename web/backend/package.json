@@ -1,0 +1,25 @@
+{
+  "name": "@genesis-trader/backend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon"
+  },
+  "dependencies": {
+    "@types/socket.io": "^1.4.31",
+    "@types/uuid": "^3.4.3",
+    "bignumber.js": "^4.1.0",
+    "koa": "^2.3.0",
+    "koa-router": "^7.2.1",
+    "rxjs": "^5.4.3",
+    "socket.io": "^2.0.3",
+    "typescript": "^2.5.3",
+    "uuid": "^3.1.0"
+  },
+  "devDependencies": {
+    "ts-node": "^3.3.0",
+    "nodemon": "^1.12.1",
+    "@types/koa": "^2.0.39",
+    "@types/koa-router": "^7.0.23"
+  }
+}

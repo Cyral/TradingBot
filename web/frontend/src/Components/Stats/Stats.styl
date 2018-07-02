@@ -1,0 +1,32 @@
+@import '../../Vars'
+
+.stats
+  padding 8px
+  font-size 1.2em
+  .stat-line
+    .stat-type
+      display inline-block
+      text-align right
+      width 5em
+    .stat-price
+      margin 0 0.7em
+      border-radius 5px
+      background-color #e9f5ff
+      padding 4px 8px
+      display inline-block
+      text-align center
+      width 5em
+    .stat-change
+      font-weight bold 
+      display inline-block
+      width 8em
+      .stat-change-fiat
+        opacity 0.75
+        font-weight normal
+        margin-left 1em
+      &.change-pos
+        color $color-green
+      &.change-neg
+        color $color-orange
+    &+.stat-line
+      margin-top 4px

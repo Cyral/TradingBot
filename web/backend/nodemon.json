@@ -1,0 +1,6 @@
+{
+  "watch": ["src", "../../common/"],
+  "legacyWatch": true,
+  "exec": "ts-node src/index.ts --color" ,
+  "ext": "js json ts"
+}

@@ -1,0 +1,73 @@
+@import 'nib'
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+
+global-reset()
+
+@import './Vars'
+
+body, html
+  height 100%
+body
+  font-family $font
+  font-size 14px
+  
+h1
+  font-size 2em
+  
+strong
+  font-weight bold
+  
+em
+  font-style italic
+  
+h1
+  font-size 1.3em
+h2
+  font-size 1.2em
+h3
+  font-size 1.1em
+  
+#app
+  height 100%
+  
+// CSS Grid
+.header
+  grid-area header
+.sidebar-left
+  grid-area sidebar-left
+.sidebar-right
+  grid-area sidebar-right
+.content
+  grid-area content
+  
+.container
+  height 100vh
+  overflow hidden
+  display grid
+  grid-template-rows auto 1fr
+  grid-template-columns 250px 1fr 400px
+  grid-template-areas "header header header" "sidebar-left content sidebar-right"
+  background-color $color-background
+  color #444
+  
+.section
+  background-color $color-background
+  color $color-text
+  border-right 2px solid $color-section-divider
+  position relative
+  .section-header
+    font-size 1.3em
+    background-color $color-section-header 
+    padding 1em 0.85em
+  .section-body
+    padding 1em
+    
+.clearfix:after
+  content ""
+  display table
+  clear both
+  
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}

@@ -1,0 +1,6 @@
+{
+  "watch": ["src", "../common", "libs/gdax/lib"],
+  "legacyWatch": true,
+  "ext": "js json ts",
+  "exec": "ts-node ./src/index.ts --color"
+}

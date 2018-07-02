@@ -1,0 +1,8 @@
+node_modules/
+dist/
+libs/
+.idea/
+*.log
+.npm/
+.config/
+gdax.dat

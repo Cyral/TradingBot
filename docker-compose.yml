@@ -1,0 +1,66 @@
+version: "3.2"
+services:
+  redis:
+    build:
+      context: ./docker
+      dockerfile: redis.df
+    volumes:
+      - /data
+  mongo:
+    build:
+      context: ./docker
+      dockerfile: mongo.df
+    volumes:
+      - /data/db
+  nginx:
+    build:
+      context: web/nginx
+    volumes:
+    - ./web/nginx/sites:/etc/nginx/conf.d/
+    - ./web/frontend/assets:/var/www/assets
+    ports:
+    - '8001:80'
+    links:
+    - backend
+  common:
+    build: 
+      context: ./common
+    volumes:
+      - ./common:/home/app/common
+  trader:
+    build:
+      context: trader/
+    volumes:
+    - ./trader:/home/app/trader
+    - ./common:/home/app/common
+    # - /home/app/frontend/node_modules
+    environment:
+      NODE_ENV: dev
+    links:
+      - mongo
+      - redis
+      - common
+  frontend:
+    build:
+      context: web/frontend
+    volumes:
+    - ./web/frontend:/home/app/frontend
+    - ./common:/home/app/common
+    # - /home/app/frontend/node_modules
+    environment:
+      NODE_ENV: dev
+    links:
+      - redis
+      - common
+  backend:
+    build:
+      context: web/backend
+    volumes:
+    - ./web/backend:/home/app/web/backend
+    - ./common:/home/app/common
+    # - /home/app/frontend/node_modules
+    environment:
+      NODE_ENV: dev
+    links:
+      - redis
+      - common

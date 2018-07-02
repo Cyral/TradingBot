@@ -1,0 +1,6 @@
+{
+  "watch": ["src"],
+  "ext": "ts",
+  "quiet": true,
+  "exec": "ts-node ./src/index.ts"
+}

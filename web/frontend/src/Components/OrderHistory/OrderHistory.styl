@@ -1,0 +1,107 @@
+@import '../../Vars'
+
+.trade-history
+  ul
+    font-size 13px
+    line-height 15px
+    .trade
+      background-color $color-section-header
+      padding 5px 8px
+      margin-bottom 3px
+      border-radius 5px
+      animation fadeIn 1s 
+      .trade-info
+        .trade-type
+          display inline-block
+          width 12%
+          text-transform uppercase
+          font-weight bolder
+        .trade-time
+          opacity 0.5
+          display inline-block
+          width 28%
+        .trade-size
+          display inline-block
+          width 22%
+        .trade-at
+          display inline-block
+          width 5%
+          opacity 0.5
+        .trade-price
+          display inline-block
+          width 20%
+        .trade-change
+          float right
+          &.change-pos
+            color $color-green
+          &.change-neg
+            color $color-orange
+      &.trade-sell
+        .trade-type
+          color $color-sell
+      &.trade-buy
+        .trade-type
+          color $color-buy
+      .trade-orders
+        .trade-order
+          border-top 1px solid lighten($color-section-header, 10%)
+          margin-top 2px
+          padding-top 2px
+          animation fadeIn 0.6s
+          .order-info
+            .order-title
+              display inline-block
+              width 12%
+            .order-state
+              padding-right 8%
+              display inline-block 
+              width 20%
+              text-transform uppercase
+              font-weight bolder
+            .order-size
+              display inline-block
+              width 22%
+            .order-at
+              display inline-block
+              width 5%
+              opacity 0.5
+            .order-price
+              display inline-block
+              width 20%
+          &.order-open .order-state
+            color #eddd59
+          &.order-rejected .order-state
+            color #ed5959
+          &.order-done .order-state
+            color $color-green
+          &.order-canceled .order-state
+            color $color-orange
+          &.order-rejected, &.order-canceled
+            animation fadeOrderCancel 0.6s
+            animation-fill-mode forwards
+          .order-fills
+            .order-fill
+              animation tradeFadeIn 0.6s
+              .fill-title
+                padding-left 12%
+                display inline-block
+                width 10%
+              .fill-time
+                opacity 0.5
+                display inline-block
+                width 18%
+              .fill-size
+                display inline-block
+                width 22%
+              .fill-at
+                display inline-block
+                width 5%
+                opacity 0.5
+              .fill-price
+                display inline-block
+                width 20%
+                
+@keyframes fadeOrderCancel {
+  0% {opacity: 1;}
+  100% {opacity: 0.3;}
+}

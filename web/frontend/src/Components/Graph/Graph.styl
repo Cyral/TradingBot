@@ -1,0 +1,58 @@
+.graph
+  margin-top 1em
+  svg
+    text
+      fill #000
+      font-family 'Roboto', 'Arial', sans-serif
+      font-size 12px
+    .ma-1 path.line
+      stroke #9000ff
+      stroke-width 2px
+    .ma-2 path.line
+      stroke #007eff
+      stroke-width 2px
+    path.tradearrow
+      stroke-width 2px
+    path.tradearrow.buy 
+      stroke #0c5600
+      fill #00AA00
+    path.tradearrow.sell
+      stroke #640000
+      fill #FF0000
+    path
+      &.candle
+        stroke #000000
+        &.body
+          stroke-width 0
+        &.up
+          fill #00AA00
+          stroke #00AA00
+        &.down
+          fill #FF0000
+          stroke #FF0000
+      &.ohlc
+        stroke #000000
+        stroke-width 1
+        &.up
+          stroke #00AA00
+        &.down
+          stroke #FF0000
+      &.volume
+        fill #DDD
+      &.line
+        fill none
+        stroke #BF5FFF
+        stroke-width 1
+    .extent
+      stroke #fff
+      fill-opacity .125
+      shape-rendering crispEdges
+    .crosshair
+      cursor crosshair
+      path
+        &.wire
+          stroke #DDDDDD
+          stroke-dasharray 1, 1
+      .axisannotation
+        path
+          fill #DDDDDD

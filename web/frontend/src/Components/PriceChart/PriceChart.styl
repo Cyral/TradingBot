@@ -1,0 +1,63 @@
+@import '../../Vars'
+
+.price-chart
+  .section-body
+    padding 0
+  .graph
+    svg
+      background-color $color-background
+    text
+      fill $color-text
+      font-family $font
+      font-size 13px 
+    .axis path, .tick line
+      stroke lighten($color-volume, 20%)
+    .indicator
+      stroke-width 2
+      fill none 
+      stroke-dasharray 5 3
+      stroke-linejoin round
+      stroke-linecap round
+      opacity 0.75
+      &.indicator-1 path
+        stroke #9600ff
+      &.indicator-2 path
+        stroke #ffd200
+      &.indicator-3 path
+        stroke #00baff
+      &.indicator-4 path
+        stroke #00ff8a
+    .y.annotation.left path
+      fill #00AA00
+    .y.annotation.right path
+      fill #FF0000
+    .x.annotation path 
+      fill #DDD80E
+    .crosshair
+      cursor crosshair
+    .crosshair path.wire
+      stroke lighten($color-volume, 20%)
+      stroke-dasharray 1, 1
+    .crosshair .axisannotation path 
+      fill rgba(255,255,255,0.2)
+    path
+      &.tradearrow
+        stroke-width 2px
+        &.buy
+          stroke $color-section-divider 
+          fill $color-buy
+        &.sell
+          stroke $color-section-divider
+          fill $color-sell
+      &.candle
+        stroke $color-volume 
+        fill $color-volume
+        &.up
+          //fill $color-green
+          fill $color-green
+          stroke $color-green
+        &.down
+          fill $color-orange
+          stroke $color-orange
+      &.volume
+        fill $color-volume

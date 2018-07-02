@@ -1,0 +1,29 @@
+@import '../../Vars'
+
+.trade-history
+  ul
+    font-size 13px
+    line-height 15px
+    .trade-match
+      animation fadeIn 1s
+      &.match-sell .match-price
+        color $color-green
+      &.match-buy .match-price
+        color $color-orange
+      .match-size
+        width 40%
+        display inline-block
+        opacity 0.8
+      .match-price
+        width 30%
+        display inline-block
+        text-align center
+        i
+          font-size 0.8em
+          margin-left 2px
+      .match-time
+        width 30%
+        display inline-block
+        text-align right
+        opacity 0.5
+    
